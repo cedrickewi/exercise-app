@@ -1,6 +1,7 @@
 import { View, Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useEffect } from "react";
+import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
 export default function HomeScreen({ navigation }: any) {
   useEffect(() => {
@@ -12,7 +13,7 @@ export default function HomeScreen({ navigation }: any) {
       <Text>I am Home Screen</Text>
       <Button
         title="Go to Planner"
-        onPress={() => navigation.push("Planner")}
+        onPress={() => navigation.navigate("Planner")}
       />
     </View>
   );
