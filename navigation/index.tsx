@@ -38,14 +38,14 @@ function BottomTabNavigator() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: () => <Entypo name="home" size={24} color="black" />,
+          tabBarIcon: ({color,size}) => <Entypo name="home" size={size} color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Planner"
         component={PlannerScreen}
         options={{
-          tabBarIcon: () => <Entypo name="clock" size={24} color="black" />,
+          tabBarIcon: ({color, size}) =>  <Entypo name="add-to-list" size={size} color={color} />,
         }}
       />
     </BottomTab.Navigator>
