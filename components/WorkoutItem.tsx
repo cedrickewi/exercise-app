@@ -1,13 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Workout } from "../types/data";
+import { formatSec, secToMin } from "../utils/time";
 
 const WorkoutItem = ({ item }: { item: Workout }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.name}>{item.name}</Text>
-      <Text style={styles.duration}>Duration: {item.duration}</Text>
-      <Text style={styles.difficulty}>Defficulty{item.difficulty}</Text>
+      <Text style={styles.duration}>
+        Duration : {formatSec(item.duration)} min
+      </Text>
+      <Text style={styles.difficulty}> Difficulty : {item.difficulty}</Text>
     </View>
   );
 };
@@ -21,7 +24,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     marginBottom: 10,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
   },
   name: {
     fontSize: 15,
